@@ -2,27 +2,27 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: portal-atendimento
+    app: cadastro-app
     app.kubernetes.io/component: web
-    app.kubernetes.io/instance: portal-atendimento
-    app.kubernetes.io/name: portal-atendimento
-    app.kubernetes.io/part-of: portal-atendimento
+    app.kubernetes.io/instance: cadastro-app
+    app.kubernetes.io/name: cadastro-app
+    app.kubernetes.io/part-of: cadastro-app
     app.openshift.io/runtime: java
-  name: portal-atendimento
+  name: atendimento
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: portal-atendimento
+      app: cadastro-app
   template:
     metadata:
       labels:
-        app: portal-atendimento
+        app: cadastro-app
     spec:
       containers:
-      - name: portal-atendimento
+      - name: cadastro-app
         imagePullPolicy: Always
-        image: quay.io/farid_ahmad/portal-atendimento:latest
+        image: quay.io/farid_ahmad/cadastro-app:latest
         livenessProbe:
           failureThreshold: 3
           httpGet:
