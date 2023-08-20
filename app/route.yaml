@@ -2,12 +2,12 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   labels:
-    app: portal-atendimento
-  name: portal-atendimento
+    app: cadastro-app
+  name: cadastro-app
 spec:
   port:
     targetPort: 8080-tcp
   to:
     kind: Service
-    name: portal-atendimento
+    name: cadastro-app
     weight: 100
