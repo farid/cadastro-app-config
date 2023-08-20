@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: portal-atendimento
+    app.kubernetes.io/component: web
+    app.kubernetes.io/instance: portal-atendimento
+    app.kubernetes.io/name: portal-atendimento
+    app.kubernetes.io/part-of: portal-atendimento
+    app.openshift.io/runtime: java
+  name: portal-atendimento
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portal-atendimento
+  template:
+    metadata:
+      labels:
+        app: portal-atendimento
+    spec:
+      containers:
+      - name: portal-atendimento
+        imagePullPolicy: Always
+        image: quay.io/farid_ahmad/portal-atendimento:latest
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 45
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        - containerPort: 8443
+          protocol: TCP
+        - containerPort: 8778
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 45
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 5
