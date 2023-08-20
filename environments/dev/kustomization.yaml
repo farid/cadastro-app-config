@@ -4,8 +4,8 @@ resources:
 - ../../app/
 images:
 - digest: sha256:f241f6aff217ff6961bbf3fef6b3758ece5322037cffbe2c73f12bb0ec9e2aef
-  name: quay.io/farid_ahmad/portal-atendimento:latest
-  newName: image-registry.openshift-image-registry.svc:5000/cicd/portal-atendimento
+  name: quay.io/farid_ahmad/cadastro-app:latest
+  newName: image-registry.openshift-image-registry.svc:5000/cicd/cadastro-app
 - digest: sha256:d2581c854f876ac58ef6f1a606bad4bbd594804337a9b536e092b34393e9b63b
-  name: quay.io/siamaksade/spring-petclinic:latest
-  newName: image-registry.openshift-image-registry.svc:5000/cicd/portal-atendimento
+  name: quay.io/farid_ahmad/cadastro-app:latest
+  newName: image-registry.openshift-image-registry.svc:5000/cicd/cadastro-app
