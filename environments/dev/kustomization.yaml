@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - ../../app/
 images:
-- digest: sha256:4a0d0ad6f8f083c487b8821b17b068823719afe6d2268ad57d46437e8dd4fdb6
+- digest: sha256:699b53909c15842e75d9798ca16f9f0a906387c4d2d0bf9b1bab7702ea3639d3
   name: quay.io/farid_ahmad/cadastro-app:latest
   newName: image-registry.openshift-image-registry.svc:5000/cicd/cadastro-app
 - digest: sha256:f241f6aff217ff6961bbf3fef6b3758ece5322037cffbe2c73f12bb0ec9e2aef
